@@ -1,0 +1,46 @@
+{% extends 'eshop/basic.html'%}
+{%block title%} E-Shop Home {%endblock%}
+{%block body%}
+<div class="alert alert-primary" role="alert">
+  Welcome to E-Shop Home Page!
+</div>
+
+<h2 class="mx-5 my-3" style="color: rgb(142, 185, 231);">Category:T-Shirts</h2>
+<div class="d-flex align-content-start mx-5 my-2 overflow-auto">
+
+  {% for pro in t_cat %}
+  <div class="card mx-1 px-1 py-1 w-50 p-3" style="max-width: 18rem; min-width: 15rem; max-height: fit-content; ">
+    <img src='media/{{pro.product_image}}' class="card-img-top" style="max-height: 15em; " alt="{{ pro.product_name }}">
+    <div class="card-body mx-1 px-1 py-1">
+      <h5 class="card-title" style="  width: 40ch; overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
+       {{ pro.product_name }}</h5>
+      <p class="card-text m-2" style=" width: 20ch; overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
+        {{pro.desc }}</p>
+      <p class="card-text m-2" style=" width: 20ch; overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
+        Rs.{{ pro.product_price }}</p>
+      <a href="#" class="btn btn-primary bottom-0 start-0 mx-2 my-2">Add to Cart</a>
+      <a href="#" class="btn btn-primary bottom-0 end-0 my-2">Buy Now</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<h2 class="mx-5 my-3" style="color: rgb(142, 185, 231);">Category:Electronics</h2>
+<div class="d-flex align-content-start mx-5 my-2 overflow-auto">
+
+  {% for pro in w_cat %}
+  <div class="card mx-1 px-1 py-1 w-50 p-3" style="max-width: 18rem; min-width: 15rem; max-height: fit-content; ">
+    <img src='media/{{pro.product_image}}' class="card-img-top" style="max-height: 15em; " alt="{{ pro.product_name }}">
+    <div class="card-body mx-1 px-1 py-1">
+      <h5 class="card-title" style="  width: 40ch; overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">{{pro.product_name }}</h5>
+      <p class="card-text m-2" style=" width: 20ch; overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">{{pro.desc }}</p>
+      <p class="card-text m-2" style=" width: 20ch; overflow: hidden; white-space: nowrap; text-overflow:ellipsis;">
+        Rs.{{ pro.product_price }}</p>
+      <a href="#" class="btn btn-primary bottom-0 start-0 mx-2 my-2">Add to Cart</a>
+      <a href="#" class="btn btn-primary bottom-0 end-0 my-2">Buy Now</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock%}
