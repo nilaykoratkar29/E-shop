@@ -37,3 +37,12 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Category(models.Model):
+    category_id = models.AutoField
+    category_name = models.CharField(max_length=20,default='')
+    def __str__(self):
+        return self.category_name
+
+    

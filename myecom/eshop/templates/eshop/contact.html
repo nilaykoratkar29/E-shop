@@ -1,70 +1,87 @@
 {% extends 'eshop/basic.html'%}
 {% block title %}Contact Us{% endblock %}
-{% block body%}
+{% block nav%}<li class="nav-item">
+  <a class="nav-link " href="/">Home</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/index">Products</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/about">About Us</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link active" aria-current="page" href="/contact">Contact Us</a>
+</li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+    aria-expanded="false">
+    Product Categories
+  </a>{% endblock%}
+  {% block body%}
 
-<div class="form-label mx-3 my-3 ">
-  <h3>We are always here to help you out. Please tell us your query!</h3>
-</div>
-<form class="row g-3 needs-validation" novalidate>
-  <div class="col-md-4 mx-3 my-3 ">
-    <label for="validationCustom01" class="form-label my-3 ">First name🚩</label>
-    <input type="text" class="form-control" id="validationCustom01" required>
-    <div class="valid-feedback">
-      Looks good!
-    </div>
+  <div class="form-label mx-3 my-3 ">
+    <h3>We are always here to help you out. Please tell us your query!</h3>
   </div>
-  <div class="col-md-4 mx-3 my-3">
-    <label for="validationCustom02" class="form-label my-3 ">Last name</label>
-    <input type="text" class="form-control" id="validationCustom02" required>
-    <div class="valid-feedback">
-      Looks good!
-    </div>
-  </div>
-  <div class="col-md-4 mx-3 ">
-    <label for="validationCustomUsername" class="form-label ">Username</label>
-    <div class="input-group has-validation">
-      <span class="input-group-text" id="inputGroupPrepend">@</span>
-      <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-        required>
-      <div class="invalid-feedback">
-        Please choose a username.
+  <form class="row g-3 needs-validation" novalidate>
+    <div class="col-md-3  px-2 ">
+      <label for="validationCustom01" class="form-label my-3 mx-2  ">First name🚩</label>
+      <input type="text" class="form-control px-2" id="validationCustom01" required>
+      <div class="valid-feedback">
+        Looks good!
       </div>
     </div>
-  </div>
+    <div class="col-md-3  ">
+      <label for="validationCustom02" class="form-label my-3 mx-2  ">Last name</label>
+      <input type="text" class="form-control" id="validationCustom02" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-3  ">
+      <label for="validationCustomUsername" class="form-label mt-4 mx-2 ">Username</label>
+      <div class="input-group has-validation">
+        <span class="input-group-text" id="inputGroupPrepend">@</span>
+        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+          required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
 
-  <div class="col-md-3 mx-3 ">
-    <label for="validationCustom03" class="form-label ">City</label>
-    <input type="text" class="form-control" id="validationCustom03" required>
-    <div class="invalid-feedback">
-      Please provide a valid city.
+    <div class="col-md-3">
+      <label for="validationCustom03" class="form-label mx-2  ">City</label>
+      <input type="text" class="form-control" id="validationCustom03" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
     </div>
-  </div>
 
-  <div class="col-md-3 mx-3 ">
-    <label for="validationCustom04" class="form-label ">State</label>
-    <select class="form-select" id="validationCustom04" required>
-      <option selected disabled value="">Choose...</option>
-      <option>...</option>
-    </select>
-    <div class="invalid-feedback">
-      Please select a valid state.
+    <div class="col-md-3  ">
+      <label for="validationCustom04" class="form-label mx-2 ">State</label>
+      <select class="form-select" id="validationCustom04" required>
+        <option selected disabled value="">Choose...</option>
+        <option>...</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
     </div>
-  </div>
-  <div class="col-md-3 mx-3 ">
-    <label for="validationCustom05" class="form-label">Zip</label>
-    <input type="text" class="form-control" id="validationCustom05" required>
-    <div class="invalid-feedback">
-      Please provide a valid zip.
+    <div class="col-md-3  ">
+      <label for="validationCustom05" class="form-label mt-1 mx-2 ">Zip</label>
+      <input type="text" class="form-control" id="validationCustom05" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
     </div>
-  </div>
-  <div class="col-12">
-    <div class="mb-3 mx-3 my-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Please Enter Your Message</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Type Here"></textarea>
+    <div class="col-12">
+      <div class="mb-3  my-3">
+        <label for="exampleFormControlTextarea1" class="form-label mx-2 ">Please Enter Your Message</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Type Here"></textarea>
+      </div>
     </div>
-  </div>
-  <div class="col-12 mx-3 ">
-    <button class="btn btn-primary" type="submit">Submit</button>
-  </div>
-</form>
-{% endblock %}
+    <div class="col-12 ">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+  </form>
+  {% endblock %}

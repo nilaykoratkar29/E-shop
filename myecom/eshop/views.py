@@ -3,26 +3,19 @@ from itertools import product
 
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Products
+from .models import Products,Category
 
 # Create your views here.
 
 
-def index(request):
-    #  products = Products.objects.all()
-    #  print(products)
-    #  catProds=Products.objects.all()
-    #  category=catProds.product_cat('tshirt')
-    #  print(category)
-    Tcate=Products.objects.filter(product_cat='tshirt')
-    Wcat=Products.objects.filter(product_cat='electronics')
-    params={'t_cat':Tcate , 'w_cat':Wcat}
-    return render(request, 'eshop/index.html' ,params)
+def home(request):
+    return render(request, 'home.html')
 
 
 def tshirt(request):
-  
-    return render(request, 'eshop/tshirtss.html')
+    tpage = Products.objects.filter(product_cat='tshirt')
+    params = {'tpage': tpage}
+    return render(request, 'eshop/tshirtss.html', params)
 
 
 def contact(request):
@@ -34,7 +27,13 @@ def about(request):
 
 
 def productview(request):
-    return HttpResponse('Creating it just wait for a while')
+ cattable=Category.objects.all()
+ allprods=Products.objects.all()
+ Tcate = Products.objects.filter(product_cat='tshirt')
+ Ecat = Products.objects.filter(product_cat='electronics')
+ Wcat = Products.objects.filter(product_cat='watch')
+ params = {'t_cat': Tcate, 'e_cat': Ecat, 'w_cat': Wcat , 'procat':cattable ,'allpro':allprods}
+ return render(request, 'eshop/index.html', params)
 
 
 def exp(request):
